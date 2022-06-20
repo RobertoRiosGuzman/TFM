@@ -1,0 +1,17 @@
+﻿<!doctype html>
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+ <body>
+  <h1>Why anomaly or not?</h1>
+  <div>
+    <iframe allow="fullscreen" srcdoc="{{result}}" width="1000" height="300" frameborder="0" scrolling="no" ></iframe>
+  </div>
+  {% if typeP|length %} 
+  <h1>Why a {{typeP}}?</h1>
+  <div>
+    <iframe allow="fullscreen" srcdoc="{{result_multiclass}}" width="1000" height="300" frameborder="0" scrolling="no" ></iframe>
+  </div>
+  {% endif %}
+</body><script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</html>
+

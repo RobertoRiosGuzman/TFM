@@ -1,0 +1,12 @@
+[workspace]
+restore_data_on_startup = True
+save_data_on_exit = True
+save_history = True
+save_non_project_files = False
+project_type = 'empty-project-type'
+recent_files = ['consumidorPy.py', 'app.py', '..\\servidorPySpark\\method_pyspark.py', '..\\simuladorTrazas\\producerDemo.py', '..\\Explainers\\creatorExplainerBin.py', '..\\Explainers\\creatorExplainerMult.py', '..\\..\\..\\..\\..\\A1SI\\Plantillas\\Extraccion\\untitled0.py']
+
+[main]
+version = 0.2.0
+recent_files = []
+

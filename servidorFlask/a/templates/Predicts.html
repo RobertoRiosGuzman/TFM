@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Anomaly Detection, 92, 25, Types anomalys, 92, 25, 37, 87, 87, 87">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Predicts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/nicepage.css') }}" media="all">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/Predicts.css') }}" media="all">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename= 'js/jquery.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename= 'js/nicepage.js') }}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.4.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Predicts">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-gradient u-xl-mode" style="background-image: linear-gradient(#e9f2fa, #adcce9);"><header class="u-clearfix u-header u-header" id="sec-5413"></header>
+    <section class="u-clearfix u-section-1" id="sec-31f9">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="https://nicepage.com/k/university-website-templates" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">DOWLOAD</a>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-dbdd">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-text u-text-default u-text-1">Anomaly Detection</h1>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
+                <h1 class="u-text u-text-default u-title u-text-2" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">92</h1>
+                <p class="u-text u-text-3">Anomaly</p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-2">
+                <h1 class="u-text u-text-default u-title u-text-4" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">25</h1>
+                <p class="u-text u-text-5">No anomaly</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-3" id="sec-657a">
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-valign-top-lg u-valign-top-xl u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1">Types anomalys</h2>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+	    {% for anomaly in anomalys %}
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
+                <h1 class="u-text u-title u-text-2" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">{{anomaly.count}}</h1>
+                <p class="u-text u-text-3">{{anomaly.name}}</p>
+              </div>
+            </div>
+	   {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-4" id="sec-e086">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-default u-text-1">Registros</h3>
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+          <table class="u-table-entity u-table-entity-1">
+            <colgroup>
+              <col width="20%">
+              <col width="20%">
+              <col width="22.4%">
+              <col width="17.6%">
+              <col width="20%">
+            </colgroup>
+            <thead class="u-gradient u-table-header u-table-header-1">
+              <tr style="height: 30px;">
+                <th class="u-gradient u-table-cell u-table-cell-1">Number</th>
+                <th class="u-gradient u-table-cell u-table-cell-2">TIME</th>
+                <th class="u-gradient u-table-cell u-table-cell-3">Anomaly / No anomaly</th>
+                <th class="u-gradient u-table-cell u-table-cell-4">Type Anomaly</th>
+                <th class="u-gradient u-table-cell u-table-cell-5">Explain</th>
+              </tr>
+            </thead>
+            <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+	      {% for log in logs %}
+              <tr style="height: 244px;">
+                <td class="u-table-cell">logs.id</td>
+                <td class="u-table-cell">logs.time</td>
+                <td class="u-table-cell">logs.isAnomaly</td>
+                <td class="u-table-cell">logs.type</td>
+                <td class="u-table-cell">view</td>
+              </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
+        <span>HTML Website Builder</span>
+      </a>. 
+    </section><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px" class="u-back-to-top u-icon u-icon-circle u-opacity u-opacity-85 u-palette-1-base u-spacing-15" data-href="#">
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
+        <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
+    </span>
+  </body>
+</html>
