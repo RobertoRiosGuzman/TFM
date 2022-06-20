@@ -19,8 +19,15 @@ Este trabajo se ha realizado en un dispositivo con el sistema operativo Windows 
     ```
 2.	Apache Kafka (3.1.0): descargamos e instalamos kafka 3.1.0 de la página oficial https://kafka.apache.org/downloads
 3.	Spark (3.0.3): de la página oficial de Spark descargamos spark-3.0.3-bin-hadoop2.7 desde https://spark.apache.org/downloads.html, descargamos https://github.com/steveloughran/winutils con los binarios Handoop para Windows y copiamos winutils.exe dentro de la carpeta /bin de spark. Una vez realizado estos pasos añadimos la variable de entorno SPARK_HOME con el path donde hayamos descomprimido spark, JAVA_HOME donde se tenga instalado Java 8 y HADOOP-HOME al directorio raíz de WinUtils alojado dentro de la carpeta /bin. Además, otra variable que hay que modificar es la variable PATH, en la que añadimos el /bin tanto de Spark como de Java 8. Finalmente, el último paso necesario, sería dar permisos de escritura sobre la carpeta c:\tmp\hive. Para ello creamos la carpeta, y ya que hemos descargado WinUtils, utilizamos winutils chmod 777 sobre un terminal que esté abierto como administrador.
-## Arquitectura de directorios
+4.	Mongodb: instalar mongodb para la versión de windows correspondiente mediante https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/
 
+## Arquitectura de directorios
+Este repositorio utiliza la siguiente arquitectura:
+- Utiles_GenExplainers: contiene dos scripts para generar los explainers explicativos para cualquier modelo multiclase o binario de tipo Random Forest, Regresión Logística, XGBoost, MLP, KNN y Decision Tree.
+- Utiles_GenModelos: cuadernillo jupyter con preprocesamiento, estudio y creación de modelos por defecto, junto con estadísticas de métricas y uso de SHAP.
+- simuladorTrazas: script con simulación de monitoreo de trazas.
+- servidorPySpark: script desarrollado en PySpark para procesar utilizando los modelos de Machine Learning las trazas recibidas por el topic test, reenviando los resultados por el topic test_1 y almacenando en mongodb.
+- servidorFlask: script principal de la aplicación con los archivos html y css correspondientes.
 ## Tutorial de uso
 Se debe seguir los siguientes pasos:
   1. Ejecutar Zookeeper y Kafka: en el directorio batKafka se encuentra los scripts a ejecutar. Primero, initZookeeper para inicializar servidor Zookeeper, en segundo lugar initKafka para inicializar servidor Kafka, crear los topics de comunicación mediante initTopicTest y initTopicTest_1. IMPORTANTE: modificar los script con las rutas de cada sistema propio.
