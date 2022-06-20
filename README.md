@@ -17,5 +17,5 @@ Este trabajo se ha realizado en un dispositivo con el sistema operativo Windows 
     ```
     pip install requirements.txt
     ```
-2.	Apache Kafka (VX):
+2.	Apache Kafka (3.1.0): descargamos e instalamos kafka 3.1.0 de la página oficial https://kafka.apache.org/downloads
 3.	Spark (VX):
